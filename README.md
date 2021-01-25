@@ -2,7 +2,7 @@
 
 [pixyll.com](http://www.pixyll.com)
 
-![Pixyll screenshot](https://cloud.githubusercontent.com/assets/1424573/3847467/134aa236-1e66-11e4-8421-4e8c122118dc.png)
+![Pixyll screenshot](./screenshot.png)
 
 Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff. It's mobile _first_, fluidly responsive, and delightfully lightweight.
 
@@ -120,10 +120,6 @@ More setup instructions and advanced options can be found at [http://formspree.i
 
 To configure Disqus, set up a [Disqus site](https://disqus.com/admin/create/) with the same name as your site. Then, in `_config.yml`, edit the `disqus_shortname` value to enable Disqus.
 
-### txtpen
-
-To configure txtpen, set up a [txtpen site](https://txtpen.com/go) with the same name as your site. Then, in `_config.yml`, edit the `txtpen_sitename` value to enable txtpen
-
 ### Customizing the CSS
 
 All variables can be found in the `_sass/_variables.scss` file, toggle these as you'd like to change the look and feel of Pixyll.
@@ -179,6 +175,21 @@ If search engine optimization is your thing, you can also set up `meta_descripti
 
 And lastly - if you happen to write in language other than English be sure to change `og_locale` in `_config.yml` to reflect it.
 
+### Progressive Web App
+
+Pixyll supports features of a progressive web app (PWA).  As a PWA, your site's home page can be installed as a shortcut or an app icon on a mobile device.  Also, certain assets are cached so the site can be accessed should the device be offline from the network.
+
+Pixyll supports these features because it provides a Javascript file that acts as a *service worker* in the browser and has a JSON file with a *web manifest*.  By default, these are configured to the settings of Pixyll, but you should consider cutomizing them to your specific site:
+
+1. Provide a different version of `splash-512x512.png` which is the loading screen for your offline app.
+2. A `favicon-192x192.png` for the app icon (if you haven't already).
+3. In `sw.js`, list any other files or pages you want to add to the list of cached artifacts.
+
+For more information on PWAs:
+
+- https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps
+- https://web.dev/what-are-pwas/
+
 ### Enjoy
 
 I hope you enjoy using Pixyll. If you encounter any issues, please feel free to let me know by creating an [issue](https://github.com/johnotander/pixyll/issues). I'd love to help.
@@ -218,3 +229,7 @@ There may be merge conflicts, so be sure to fix the files that git lists if they
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Forking
+
+There is a [guide to forking Pixyll](http://pixyll.com/jekyll/pixyll/2019/01/26/guide-to-forking-pixyll/).
